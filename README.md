@@ -1,6 +1,6 @@
 # CustomFields
 
-Add custom fields to user preferences
+Add custom fields to user preferences at Kimai
 
 New fields:
 * Dependentes
