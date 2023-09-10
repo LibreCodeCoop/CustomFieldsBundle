@@ -4,7 +4,7 @@
     "homepage": "https://www.kimai.org/",
     "type": "kimai-plugin",
     "version": "1.0.0",
-    "license": "MIT",
+    "license": "AGPL-3.0-or-later",
     "extra": {
         "kimai": {
             "require": 20000,
