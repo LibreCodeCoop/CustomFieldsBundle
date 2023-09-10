@@ -6,6 +6,7 @@ use App\Entity\UserPreference;
 use App\Event\UserPreferenceDisplayEvent;
 use App\Event\UserPreferenceEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Contracts\EventDispatcher\Event;
@@ -28,6 +29,14 @@ class UserProfileSubscriber implements EventSubscriberInterface
     public function loadUserPreferences(UserPreferenceEvent $event): void
     {
         $this->addPreferences($event);
+        $event->addPreference(
+            (new UserPreference('email', ''))
+                ->setOrder(900)
+                ->setSection('extra_fields')
+                ->setOptions(['required' => false])
+                ->setEnabled(true)
+                ->setType(HiddenType::class)
+        );
     }
 
     /**
