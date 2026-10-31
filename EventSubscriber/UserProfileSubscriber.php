@@ -7,7 +7,6 @@ use App\Event\UserPreferenceDisplayEvent;
 use App\Event\UserPreferenceEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Contracts\EventDispatcher\Event;
 
@@ -51,14 +50,6 @@ class UserProfileSubscriber implements EventSubscriberInterface
                 ->setOptions(['required' => false, 'label' => 'CPF'])
                 ->setEnabled(true)
                 ->setType(TextType::class)
-        );
-        $event->addPreference(
-            (new UserPreference('dependents', ''))
-                ->setOrder(900)
-                ->setSection('extra_fields')
-                ->setOptions(['required' => false, 'label' => 'Dependentes'])
-                ->setEnabled(true)
-                ->setType(NumberType::class)
         );
     }
 }
