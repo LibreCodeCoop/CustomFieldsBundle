@@ -1,18 +1,15 @@
-# CustomFields
+# CustomFieldsBundle
 
-Add custom fields to user preferences at Kimai
+Adds user preferences to Kimai:
 
-New fields:
-* Dependentes
-* CPF
-* Email: copied from user attribute, hidden field. Only used to send by API
+- CPF (tax_number): used to match cooperados across systems.
+- Email: a hidden preference copied from the user's email for API clients.
+
+Dependents are maintained only in Nextcloud profile_fields. This plugin no
+longer defines a Kimai field for them. Existing preferences are not used or
+removed by this plugin.
 
 ## Installation
 
-copy all files to CustomFieldsBundle in var/plugins/
-```
-var/plugins/
-├── CustomFieldsBundle
-|   └ ... copy all ...
-
-```
+Copy the plugin files to var/plugins/CustomFieldsBundle/ and clear the Kimai
+application cache.
